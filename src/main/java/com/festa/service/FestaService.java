@@ -24,7 +24,6 @@ public class FestaService {
 
     //listar por id
     public Optional<FestaModel>listarid(Long id){
-
         if(fp.existsById(fm.getId())){
             fp.findById(id);
         }else{
@@ -47,5 +46,4 @@ public class FestaService {
             System.out.println("nenhuma festa encontrada");
         }
      }
-
 }
