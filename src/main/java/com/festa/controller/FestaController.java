@@ -26,7 +26,7 @@ public class FestaController {
 
     @GetMapping("/festa/id")
     //listar por id
-    public Optional<FestaModel>festaid(long id){
+    public Optional<FestaModel> festaid(long id){
         return service.listarid(id);
     }
 
