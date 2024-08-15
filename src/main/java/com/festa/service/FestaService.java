@@ -11,17 +11,13 @@ import java.util.Optional;
 @Service
 public class FestaService {
 
-    @Autowired
     private FestaRepository fp;
 
-    @Autowired
     private FestaModel fm;
-
     //listar todos
     public List<FestaModel>listarTodos(){
         return fp.findAll();
     }
-
     //listar por id
     public Optional<FestaModel>listarid(Long id){
 
@@ -38,7 +34,6 @@ public class FestaService {
      public void festasalvar(FestaModel festamodel){
             fp.save(festamodel);
      }
-
      //alterar
      public void festaalterar(FestaModel festaModel){
         if(fp.existsById(festaModel.getId())){
@@ -46,6 +41,9 @@ public class FestaService {
         }else{
             System.out.println("nenhuma festa encontrada");
         }
+     }
+     public String Hello(){
+        return "hello";
      }
 
 }
