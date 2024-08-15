@@ -18,27 +18,29 @@ public class FestaController {
     @Autowired
     private FestaService service;
 
-    @GetMapping("/festa/listarfestas")
+    @GetMapping("/listarfestas")
     //listar todos
-    public List<FestaModel> listartodos(){
+    public List<FestaModel> listarFestaTodos(){
         return service.listarTodos();
     }
 
-    @GetMapping("/festa/id")
-    //listar por id
-    public Optional<FestaModel>festaid(long id){
+    @GetMapping("/id")
+    public Optional<FestaModel> listarFestaId(long id){
         return service.listarid(id);
     }
 
-    @PostMapping("/festa/salvar")
-    //salvar
-    public void salvarfesta(FestaModel festaModel){
+    @PostMapping("/salvar")
+    public void salvarFesta(FestaModel festaModel){
         service.festasalvar(festaModel);
     }
 
-    @PostMapping("/festa/alterar")
-    public void alterarfesta(FestaModel festamodel){
+    @PostMapping("/alterar")
+    public void alterarFesta(FestaModel festamodel){
         service.festaalterar(festamodel);
     }
 
+    @GetMapping("/hello")
+    public String Hello(){
+        return service.Hello();
+    }
 }
