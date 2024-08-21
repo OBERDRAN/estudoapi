@@ -1,4 +1,4 @@
-package com.festa.exceção;
+package com.festa.excecao;
 
-public class FestaExceção {
+public class FestaExcecao {
 }
