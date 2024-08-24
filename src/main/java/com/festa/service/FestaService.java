@@ -3,7 +3,11 @@ package com.festa.service;
 import com.festa.model.FestaModel;
 import com.festa.repository.FestaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,11 +19,11 @@ public class FestaService {
 
     private FestaModel fm;
     //listar todos
-    public List<FestaModel>listarTodos(){
+    public List<FestaModel>listarFesta(){
         return fp.findAll();
     }
     //listar por id
-    public Optional<FestaModel>listarid(Long id){
+    public Optional<FestaModel>listarFestaId(Long id){
 
         if(fp.existsById(fm.getId())){
             fp.findById(id);
@@ -31,18 +35,24 @@ public class FestaService {
         return Optional.empty();
     }
     //salvar festa
-     public void festasalvar(FestaModel festamodel){
-            fp.save(festamodel);
-     }
+//     public void festasalvar(FestaModel festamodel){
+//            fp.save(festamodel);
+//     }
+
+    public ResponseEntity<FestaModel>salvarFesta(FestaModel festamodel){
+        fp.save(festamodel);
+        return ResponseEntity.ok().build();
+    }
+
      //alterar
-     public void festaalterar(FestaModel festaModel){
+    public void festaalterar(FestaModel festaModel){
         if(fp.existsById(festaModel.getId())){
             fp.save(festaModel);
         }else{
             System.out.println("nenhuma festa encontrada");
         }
-     }
-     public String Hello(){
+    }
+    public String Hello(){
         return "hello";
      }
 
