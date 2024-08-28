@@ -4,6 +4,7 @@ import com.festa.model.FestaModel;
 import com.festa.service.FestaService;
 import io.micrometer.observation.transport.ResponseContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,10 +32,15 @@ public class FestaController {
 //        service.festasalvar(festaModel);
 //    }
 
+//    @PostMapping("/salvar")
+//    public ResponseEntity<FestaModel>salvarFesta(@RequestBody FestaModel festamodel){
+//        service.salvarFesta(festamodel);
+//        return ResponseEntity.ok().build();
+//    }
+
     @PostMapping("/salvar")
-    public ResponseEntity<FestaModel>salvarFesta(@RequestBody FestaModel festamodel){
-        service.salvarFesta(festamodel);
-        return ResponseEntity.ok().build();
+    public FestaModel salvarFesta1(FestaModel festamodel){
+        return service.salvarFesta1(festamodel);
     }
     @PostMapping("/alterar")
     public void alterarFesta(FestaModel festamodel){

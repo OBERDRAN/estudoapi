@@ -38,10 +38,13 @@ public class FestaService {
 //     public void festasalvar(FestaModel festamodel){
 //            fp.save(festamodel);
 //     }
+//    public ResponseEntity<FestaModel>salvarFesta(FestaModel festamodel){
+//        fp.save(festamodel);
+//        return ResponseEntity.ok().build();
+//    }
 
-    public ResponseEntity<FestaModel>salvarFesta(FestaModel festamodel){
-        fp.save(festamodel);
-        return ResponseEntity.ok().build();
+    public FestaModel salvarFesta1(FestaModel festamodel){
+        return fp.save(festamodel);
     }
 
      //alterar
