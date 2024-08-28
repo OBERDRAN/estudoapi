@@ -15,6 +15,7 @@ import java.util.Optional;
 @Service
 public class FestaService {
 
+    @Autowired
     private FestaRepository fp;
 
     private FestaModel fm;
