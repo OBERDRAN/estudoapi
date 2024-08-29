@@ -1,19 +1,22 @@
 package com.festa.model;
 
 import jakarta.persistence.*;
-
 import java.util.Objects;
-
 @Entity
-public class FestaModel {
-
+@Table(name = "tbfestamodel")
+public class FestaModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
     private String nome;
-    @Column
     private int qtdepessoas;
+    //construtor
+    public FestaModel(){}
+    public FestaModel(long id, String nome, int qtepessoas){
+        this.id = id;
+        this.nome = nome;
+        this.qtdepessoas = qtepessoas;
+    }
     public Long getId() {
         return id;
     }

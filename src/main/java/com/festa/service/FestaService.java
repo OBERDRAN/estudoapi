@@ -3,21 +3,16 @@ package com.festa.service;
 import com.festa.model.FestaModel;
 import com.festa.repository.FestaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class FestaService {
-
     @Autowired
     private FestaRepository fp;
-
+    //@Autowired
     private FestaModel fm;
     //listar todos
     public List<FestaModel>listarFesta(){
@@ -25,7 +20,6 @@ public class FestaService {
     }
     //listar por id
     public Optional<FestaModel>listarFestaId(Long id){
-
         if(fp.existsById(fm.getId())){
             fp.findById(id);
         }else{
@@ -39,6 +33,7 @@ public class FestaService {
 //     public void festasalvar(FestaModel festamodel){
 //            fp.save(festamodel);
 //     }
+    //classe service não usa responseentity
 //    public ResponseEntity<FestaModel>salvarFesta(FestaModel festamodel){
 //        fp.save(festamodel);
 //        return ResponseEntity.ok().build();
