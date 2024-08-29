@@ -47,7 +47,6 @@ public class FestaService {
     public FestaModel salvarFesta1(FestaModel festamodel){
         return fp.save(festamodel);
     }
-
      //alterar
     public void festaalterar(FestaModel festaModel){
         if(fp.existsById(festaModel.getId())){
