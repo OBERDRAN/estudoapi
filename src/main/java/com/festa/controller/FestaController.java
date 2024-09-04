@@ -20,7 +20,7 @@ public class FestaController {
     public List<FestaModel> listarFestaTodos(){
         return service.listarFesta();
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     @ResponseStatus(code = HttpStatus.OK)
     public Optional<FestaModel> listarFestaId(long id){
         return service.listarFestaId(id);
