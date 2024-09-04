@@ -35,8 +35,8 @@ public class FestaController {
 //    }
     @PostMapping("/salvar")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public FestaModel salvarFesta1(FestaModel festamodel){
-        return service.salvarFesta1(festamodel);
+    public FestaModel salvarFesta(@RequestBody FestaModel festamodel){
+        return service.salvarFesta(festamodel);
     }
     @PostMapping("/alterar")
     @ResponseStatus(code = HttpStatus.CREATED)
