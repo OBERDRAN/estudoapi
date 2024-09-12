@@ -22,7 +22,7 @@ public class FestaController {
     }
     @GetMapping("/{id}")
     @ResponseStatus(code = HttpStatus.OK)
-    public Optional<FestaModel> listarFestaId(@PathVariable long id){
+    public Optional<FestaModel> listarFestaId(@PathVariable("id") long id) throws Exception {
         return service.listarFestaId(id);
     }
 //    public void salvarFesta(FestaModel festaModel){

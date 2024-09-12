@@ -15,21 +15,24 @@ public class FestaService {
     @Autowired
     private FestaRepository fp;
     //@Autowired
-    private FestaModel fm;
+    //private FestaModel fm;
     //listar todos
+    //instanciar objeto dentro do método
     public List<FestaModel>listarFesta(){
         return fp.findAll();
     }
     //listar por id
-    public Optional<FestaModel>listarFestaId(Long id){
-        if(fp.existsById(fm.getId())){
-            fp.findById(id);
+    public Optional<FestaModel>listarFestaId(Long id) throws Exception {
+        if(fp.existsById(id)){
+            Optional<FestaModel> festamodelid = fp.findById(id);
+            return festamodelid;
+
         }else{
             System.out.println("Nenhuma festa com esse ID");
+            throw new Exception("Nullo");
         }
         //tentando entender ainda esse codigo abaixo, mas serve pra caso
         // não encontre nenhum registro
-        return Optional.empty();
     }
     //salvar festa
 //     public void festasalvar(FestaModel festamodel){
