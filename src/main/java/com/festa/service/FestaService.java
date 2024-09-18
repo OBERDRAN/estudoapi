@@ -3,9 +3,7 @@ package com.festa.service;
 import com.festa.model.FestaModel;
 import com.festa.repository.FestaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -48,14 +46,19 @@ public class FestaService {
         return fp.save(festamodel);
     }
      //alterar
-    public void festaalterar(FestaModel festaModel){
-        if(fp.existsById(festaModel.getId())){
+    public void festaAlterar(FestaModel festamodel){
+       /* if(fp.existsById(festaModel.getId())){
             fp.save(festaModel);
         }else{
             System.out.println("nenhuma festa encontrada");
-        }
+        }*/
+
+        fp.save(festamodel);
     }
-    public String Hello(){
+    public FestaModel alterarFesta1(FestaModel festamodel){
+        return fp.save(festamodel);
+    }
+    public String hello(){
         return "hello";
      }
 
