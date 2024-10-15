@@ -4,7 +4,6 @@ import com.festa.model.FestaModel;
 import com.festa.service.FestaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,7 +38,6 @@ public class FestaController {
     public FestaModel salvarFesta(@RequestBody FestaModel festamodel){
         return service.salvarFesta(festamodel);
     }
-
     //@PostMapping("/alterar")
     /*public void alterarFesta(FestaModel festamodel){
         service.festaalterar(festamodel);
@@ -53,11 +51,11 @@ public class FestaController {
 
     //mesma função alterar, mas tras o objeto editado
     public FestaModel alterarFesta(@PathVariable("id") Long id, @RequestBody FestaModel festamodel){
-        return service.alterarFesta1(festamodel);
+        return service.alterarFesta1(id,festamodel);
     }
     @GetMapping("/hello")
     @ResponseStatus(code=HttpStatus.OK)
     public String hello(){
-        return service.Hello();
+        return service.hello();
     }
 }

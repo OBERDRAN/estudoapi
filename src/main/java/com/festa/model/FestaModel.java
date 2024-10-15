@@ -10,12 +10,9 @@ public class FestaModel{
     private Long id;
     private String nome;
     private int qtdepessoas;
+
     //construtor
-    public FestaModel(){}
-    public FestaModel(long id, String nome, int qtepessoas){
-        this.id = id;
-        this.nome = nome;
-        this.qtdepessoas = qtepessoas;
+    public FestaModel(){
     }
     public Long getId() {
         return id;
